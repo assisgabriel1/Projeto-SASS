@@ -1,0 +1,30 @@
+@use '../utils/' as *;
+
+html {
+	scroll-behavior: smooth;
+	font-size: 16px;
+
+	@include breakpointDesktop(480px) {
+		font-size: 14px;
+	}
+}
+
+body {
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+}
+
+.container {
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 1rem;
+	border: 1px solid red;
+
+	@include breakpointMobile(991px) {
+		padding: 0 2rem;
+	}
+
+	@include breakpointMobile(1440px) {
+		padding: 0 5rem;
+	}
+}

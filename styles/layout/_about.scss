@@ -1,0 +1,130 @@
+@use '../utils/' as *;
+
+.about {
+	font-size: 1rem;
+	padding: 5rem 0;
+
+	h2 {
+		font-weight: 400;
+		color: $bg-primary;
+		text-align: center;
+		padding: 5rem 0;
+		span {
+			color: $bg-secondary;
+		}
+
+		br {
+			display: none;
+		}
+
+		@include breakpointMobile(600px) {
+			br {
+				display: block;
+			}
+		}
+	}
+
+	&__wrapper {
+		display: block;
+
+		@include breakpointMobile(600px) {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: auto;
+			gap: 0.7rem;
+			grid-template-areas:
+				'ab1 ab1'
+				'ab1 ab1'
+				'ab3 ab2'
+				'ab4 ab5';
+		}
+
+		@include breakpointMobile(991px) {
+			grid-template-columns: repeat(4, 1fr);
+			grid-template-areas:
+				'ab1 ab1 ab3 ab2'
+				'ab1 ab1 ab4 ab5';
+		}
+
+		div:nth-child(1) {
+			grid-area: ab1;
+			img {
+				@include responsive-grid-image;
+			}
+		}
+		div:nth-child(2) {
+			grid-area: ab2;
+			background: $bg-secondary;
+			color: $text-light;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			@include breakpointMobile(600px) {
+				justify-content: flex-start;
+				align-items: flex-end;
+			}
+
+			h3 {
+				font-weight: 400;
+				line-height: 1.2;
+				padding: 5rem 0;
+
+				@include breakpointMobile(600px) {
+					padding: 0 0 1.25rem 1.25rem;
+				}
+
+				br {
+					display: none;
+
+					@include breakpointMobile(600px) {
+						display: block;
+					}
+				}
+			}
+		}
+
+		div:nth-child(3) {
+			grid-area: ab3;
+			img {
+				@include responsive-grid-image;
+			}
+		}
+
+		div:nth-child(4) {
+			grid-area: ab4;
+			background: $bg-primary;
+			color: $text-light;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			@include breakpointMobile(600px) {
+				justify-content: flex-start;
+				align-items: flex-end;
+			}
+			h3 {
+				font-weight: 400;
+				line-height: 1.2;
+				padding: 5rem 0;
+
+				@include breakpointMobile(600px) {
+					padding: 0 0 1.25rem 1.25rem;
+				}
+				br {
+					display: none;
+
+					@include breakpointMobile(600px) {
+						display: block;
+					}
+				}
+			}
+		}
+		div:nth-child(5) {
+			grid-area: ab5;
+			img {
+				@include responsive-grid-image;
+			}
+		}
+	}
+}

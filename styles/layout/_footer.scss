@@ -1,0 +1,65 @@
+@use '../utils/' as *;
+
+.footer {
+	font-size: 0.678rem;
+	padding: 1.25rem 0;
+	background: $bg-primary;
+
+	&__wrapper {
+		display: block;
+		text-align: center;
+		@include breakpointMobile(768px) {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		@include breakpointMobile(991px) {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		p {
+			font-weight: 300;
+			color: $text-light;
+			margin-bottom: 0.5rem;
+			@include breakpointMobile(480px) {
+				margin-bottom: 1rem;
+			}
+			@include breakpointMobile(768px) {
+				margin-bottom: 0;
+			}
+		}
+
+		ul {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 1rem;
+
+			@include breakpointMobile(480px) {
+				gap: 2.5rem;
+			}
+
+			/* li {
+				&:last-child a {
+					padding: 1rem 0 1rem 1rem;
+				}
+			} */
+
+			li a {
+				font-size: 1em;
+				text-transform: uppercase;
+				color: $text-light;
+				transition: all 400ms ease;
+				@include breakpointMobile(480px) {
+				}
+
+				&:hover {
+					color: $bg-secondary;
+				}
+			}
+		}
+	}
+}

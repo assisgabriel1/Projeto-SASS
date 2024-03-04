@@ -1,0 +1,38 @@
+@use '../utils/' as *;
+
+.testimonials {
+	font-size: 1rem;
+	padding: 5rem 0;
+	text-align: center;
+
+	svg {
+		display: block;
+		width: 50px;
+		height: 50px;
+		fill: $bg-secondary;
+		margin: 0 auto;
+	}
+
+	blockquote {
+		margin: 1.25rem auto;
+		@include breakpointMobile(768px) {
+			max-width: 600px;
+		}
+
+		@include breakpointMobile(991px) {
+			max-width: 800px;
+		}
+
+		span {
+			color: $bg-secondary;
+		}
+	}
+
+	small {
+		display: inline-block;
+		font-weight: 500;
+		letter-spacing: 7px;
+		text-transform: uppercase;
+		color: $bg-secondary;
+	}
+}

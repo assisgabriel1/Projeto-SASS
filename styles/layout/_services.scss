@@ -1,0 +1,62 @@
+@use '../utils/' as *;
+
+.services {
+	font-size: 1rem;
+
+	h2 {
+		font-weight: 400;
+		text-align: center;
+		padding: 5rem 0 2.5rem;
+	}
+
+	&__wrapper {
+		display: block;
+		@include breakpointMobile(991px) {
+			display: grid;
+			grid-template-columns: 2fr 1fr;
+			grid-template-rows: auto;
+		}
+
+		div:nth-child(1) {
+			img {
+				@include responsive-grid-image;
+			}
+		}
+
+		div:nth-child(2) {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background: $bg-primary;
+			color: $text-light;
+			text-align: center;
+			@include breakpointMobile(991px) {
+				text-align: left;
+				justify-content: flex-start;
+				align-items: flex-end;
+			}
+		}
+
+		h3 {
+			font-weight: 400;
+			line-height: 1.5;
+			padding: 2.5rem 1rem;
+			@include breakpointMobile(991px) {
+				padding: 0 2rem 2rem;
+			}
+
+			br {
+				display: none;
+				@include breakpointMobile(480px) {
+					display: block;
+				}
+				@include breakpointMobile(991px) {
+					display: none;
+				}
+				@include breakpointMobile(1500px) {
+					display: block;
+				}
+			}
+		}
+	}
+}

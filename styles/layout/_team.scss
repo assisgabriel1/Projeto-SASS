@@ -1,0 +1,23 @@
+@use '../utils/' as *;
+
+.team {
+	font-size: 1rem;
+
+	&__wrapper {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: auto;
+
+		@include breakpointMobile(991px) {
+			grid-template-columns: repeat(4, 1fr);
+		}
+
+		div:nth-child(1) {
+			background: $bg-primary;
+		}
+
+		div img {
+			@include responsive-grid-image;
+		}
+	}
+}

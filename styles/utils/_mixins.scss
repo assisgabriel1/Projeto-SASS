@@ -1,0 +1,16 @@
+@mixin breakpointDesktop($break: 0) {
+	@media (max-width: $break) {
+		@content;
+	}
+}
+
+@mixin breakpointMobile($break: 0) {
+	@media (min-width: $break) {
+		@content;
+	}
+}
+
+@mixin responsive-grid-image {
+	width: 100%;
+	height: 100%;
+}
